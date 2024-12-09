@@ -36,6 +36,11 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testMultiplyOverflow() {
+        assertThrows(ArithmeticException.class, () -> calculator.multiply(Integer.MAX_VALUE, 2));
+    }
+
+    @Test
     public void testDividePositive() {
         assertEquals(2, calculator.divide(6, 3));
     }
@@ -43,5 +48,10 @@ public class CalculatorTest {
     @Test
     public void testDivideNegative() {
         assertThrows(ArithmeticException.class, () -> calculator.divide(6, 0));
+    }
+
+    @Test
+    public void testDivideByZero() {
+        assertThrows(ArithmeticException.class, () -> calculator.divide(12345, 0));
     }
 }

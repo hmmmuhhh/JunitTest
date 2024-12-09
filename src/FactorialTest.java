@@ -11,12 +11,12 @@ public class FactorialTest {
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     public void testFactorialValid() {
-        assertEquals(120, factorial.factorial(5)); // 5! = 120
+        assertEquals(120, factorial.factorial(5));
     }
 
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     public void testFactorialLargeNumber() {
-        assertThrows(ArithmeticException.class, () -> factorial.factorial(30)); // 30! causes overflow
+        assertThrows(ArithmeticException.class, () -> factorial.factorial(30));
     }
 }
